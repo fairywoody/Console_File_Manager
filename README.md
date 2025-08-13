@@ -1,1 +1,7 @@
-# Console_File_Manager
+# Console File Manager
+
+Описание:
+
+Функционал:
+
+Необходимые библиотеки
