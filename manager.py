@@ -1,7 +1,4 @@
 import argparse
-import os
-import shutil
-import sys
 from funcs import list_files, copy_file, delete_file, delete_dir, move_file, count_files, add_date
 
 def main():
