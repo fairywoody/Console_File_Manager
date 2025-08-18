@@ -10,7 +10,6 @@ def get_creation_date(filepath):
         if sys.platform == 'win32':
             return datetime.fromtimestamp(stat.st_ctime)
         else:
-            # На Unix-системах st_ctime - это время последнего изменения метаданных
             return datetime.fromtimestamp(stat.st_mtime)
     except Exception as e:
         print(f"Ошибка при получении даты создания {filepath}: {e}", file=sys.stderr)
