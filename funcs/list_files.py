@@ -1,5 +1,13 @@
 import os
+import sys
 from datetime import datetime
+
+def convert_size(size_bytes):
+
+    for unit in ['B', 'KB', 'MB', 'GB', 'TB']:
+        if size_bytes < 1024:
+            return f'{round(size_bytes, 2)} {unit}'
+        size_bytes /= 1024
 
 def list_directory(path, show_hidden=False, long_format=False):
     """Показать содержимое директории"""
@@ -13,6 +21,7 @@ def list_directory(path, show_hidden=False, long_format=False):
                 full_path = os.path.join(path, item)
                 stat = os.stat(full_path)
                 size = stat.st_size
+                ed_size = convert_size(size)
                 mtime = datetime.fromtimestamp(stat.st_mtime).strftime('%Y-%m-%d %H:%M:%S')
                 mode = os.stat(full_path).st_mode
                 permissions = (
@@ -27,7 +36,7 @@ def list_directory(path, show_hidden=False, long_format=False):
                     'w' if mode & 0o002 else '-',
                     'x' if mode & 0o001 else '-'
                 )
-                print(f"{''.join(permissions)} {mtime} {size:8} {item}")
+                print(f"{''.join(permissions)} {mtime} {ed_size} {item}")
         else:
             for item in items:
                 print(item)

@@ -22,7 +22,7 @@ def main():
     delete_dir_parser = subparsers.add_parser('delete_dir', help='Удалить директорию')
     delete_dir_parser.add_argument('dirname', help='Имя директории')
     delete_dir_parser.add_argument('-r', '--recursive', action='store_true',
-                                   help='Рекурсивное удаление (включая поддиректории)')
+                                   help='Рекурсивное удаление (даже если папка не пустая)')
 
     # Команда copy
     copy_parser = subparsers.add_parser('copy', help='Копировать файл')
@@ -44,8 +44,7 @@ def main():
     add_date_parser.add_argument('path', help='Файл или директория для обработки')
     add_date_parser.add_argument('-r', '--recursive', action='store_true',
                                help='Рекурсивная обработка поддиректорий')
-    add_date_parser.add_argument('-f', '--format', default="%Y-%m-%d",
-                               help='Формат даты (по умолчанию: %%Y-%%m-%%d)')
+
 
     args = parser.parse_args()
 

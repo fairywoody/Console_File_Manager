@@ -20,7 +20,6 @@ def add_date_to_filename(filepath, recursive=False):
     """Добавить дату создания в название файла"""
     try:
         if os.path.isfile(filepath):
-            # Обработка одного файла
             dirname, filename = os.path.split(filepath)
             basename, ext = os.path.splitext(filename)
 
@@ -31,7 +30,6 @@ def add_date_to_filename(filepath, recursive=False):
             new_filename = f"{new_basename}{ext}"
             new_filepath = os.path.join(dirname, new_filename)
 
-            # Проверяем, не существует ли уже файл с таким именем
             counter = 1
             while os.path.exists(new_filepath):
                 new_basename = f"{basename}_{date_str}_{counter}"
@@ -43,7 +41,6 @@ def add_date_to_filename(filepath, recursive=False):
             print(f"Переименован: {filename} -> {new_filename}")
 
         elif os.path.isdir(filepath):
-            # Обработка директории
             for entry in os.scandir(filepath):
                 if entry.is_file():
                     add_date_to_filename(entry.path, False)
