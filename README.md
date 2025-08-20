@@ -25,8 +25,8 @@ bash
 python manager.py copy /path/to/source/file.txt /path/to/destination/folder
 ### Count files
 bash
-python manager.py count /path/to/directory
-or to include directories in count
+python manager.py count /path/to/directory \n
+or to include directories in count \n
 python manager.py count -d /path/to/directory
 ### Delete file or folder
 bash
@@ -36,15 +36,15 @@ bash
 python manager.py move /path/to/source/file.txt /path/to/destination/folder
 ### Add date to filename
 bash
-python manager.py add_date /path/to/file.txt
-or to change date in every file in directory (and subfolders)
+python manager.py add_date /path/to/file.txt \n
+or to change date in every file in directory (and subfolders) \n
 python manager.py add_date -r /path/to/directory
 ### Analyse file or folder
 bash
-python manager.py list /path/to/directory
-or to see the list with hidden files
-python manager.py list -a /path/to/directory
-or to analyse file or folder
+python manager.py list /path/to/directory \n
+or to see the list with hidden files \n
+python manager.py list -a /path/to/directory \n
+or to analyse file or folder \n
 python manager.py list -l /path/to/directory
 ## Installation
 
