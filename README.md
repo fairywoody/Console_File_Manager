@@ -65,5 +65,7 @@ python manager.py list -l /path/to/directory
 1. Clone the repository:
 
 bash
+
 git clone https://github.com/yourusername/dirtools.git
+
 cd dirtools
