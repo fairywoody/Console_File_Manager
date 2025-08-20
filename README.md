@@ -1,26 +1,55 @@
-# Console File Manager
+# DirTools - Command Line File Manager
 
-Описание:
-Простой менеджер для файловой системы
-Для просмотра справки используйте ключ -h
+DirTools is a command-line utility for managing files and directories with various features such as copying, moving, deleting, counting files, searching by regex, adding date prefixes, analyzing directory size, hashing files and directories, and finding duplicate files.
 
-Функционал:
-    list                Показать содержимое директории
-    delete_file         Удалить файл
-    delete_dir          Удалить директорию
-    copy                Копировать файл
-    move                Переместить файл
-    count               Подсчитать файлы в директории
-    add_date            Добавить дату создания в имя файла
+This project uses only Python standard libraries:
+os, sys, shutil, argparse, hashlib, logging, etc.
+No external dependencies required.
 
-Примеры использования:
-Для каждой из функции доступна справка (-h, --help)
+## Features
 
-python manager.py list <path_to_folder> (Доступные ключи: -a, --all - Показать скрытые файлы,
--a, --all - Показать подробный вывод (анализ) файлов в папке)
-python manager.py delete_file <path_to_file>
-python manager.py delete_dir <path_to_dir> (Используйте ключ -r если папка не пуска)
-python manager.py copy <path_what_to_copy> <path_where_to_copy>
-python manager.py move <path_from> <path_where>
-python count <path_to_folder> (Используйте ключ -d, если хотите посчитать файлы вместе с папками и подпапками)
-python add_date <path_to_file> (Используйте -r и путь к папке для того, чтобы заменились все файлы в папке и подпапках)
+- Copy, move, and delete files.
+- Check folder content
+- Count files in a directory.
+- Add date prefix to filenames.
+- Analyze directory content size.
+
+## Examples
+
+### For help run:
+bash
+python manager.py -h
+python manager.py <command> -h
+### Copy file or folder
+bash
+python manager.py copy /path/to/source/file.txt /path/to/destination/folder
+### Count files
+bash
+python manager.py count /path/to/directory
+or to include directories in count
+python manager.py count -d /path/to/directory
+### Delete file or folder
+bash
+python manager.py delete_file /path/to/source/file.txt
+### Move file or folder
+bash
+python manager.py move /path/to/source/file.txt /path/to/destination/folder
+### Add date to filename
+bash
+python manager.py add_date /path/to/file.txt
+or to change date in every file in directory (and subfolders)
+python manager.py add_date -r /path/to/directory
+### Analyse file or folder
+bash
+python manager.py list /path/to/directory
+or to see the list with hidden files
+python manager.py list -a /path/to/directory
+or to analyse file or folder
+python manager.py list -l /path/to/directory
+## Installation
+
+1. Clone the repository:
+
+bash
+git clone https://github.com/yourusername/dirtools.git
+cd dirtools
