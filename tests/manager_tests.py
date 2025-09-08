@@ -25,7 +25,7 @@ class TestFileManagerCLI(unittest.TestCase):
         with open(self.subfile, 'w') as f:
             f.write('sub content')
 
-    def DeleteTestDir(self):
+    def tearDown(self):
         shutil.rmtree(self.test_dir)
 
     def run_command(self, command_args):
